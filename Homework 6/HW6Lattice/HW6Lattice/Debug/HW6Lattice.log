@@ -1,0 +1,7 @@
+﻿  BinLattice.cpp
+  HW6Lattice.cpp
+  Option.cpp
+C:\研究生\2021 Spring\6883 Financial Computing\FRE-6883\Homework 6\HW6Lattice\HW6Lattice\Option.cpp(29,9): warning C4101: 'XNode': unreferenced local variable
+C:\研究生\2021 Spring\6883 Financial Computing\FRE-6883\Homework 6\HW6Lattice\HW6Lattice\Option.cpp(29,16): warning C4101: 'YNode': unreferenced local variable
+  Generating Code...
+  HW6Lattice.vcxproj -> C:\研究生\2021 Spring\6883 Financial Computing\FRE-6883\Homework 6\HW6Lattice\Debug\HW6Lattice.exe
