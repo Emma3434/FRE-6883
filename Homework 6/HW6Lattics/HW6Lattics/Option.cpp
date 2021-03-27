@@ -23,23 +23,23 @@ double EurOption::PriceByCRRHW6(BinModel Model, BinLattice<double>& PriceTree, B
 	double q = Model.RiskNeutProb();
 	int N = GetN();
 	PriceTree.SetN(N);
-	X.SetN(N - 1);
-	Y.SetN(N - 1);
+	X.SetN(N);
+	Y.SetN(N);
 	double OptionValue;
 	double XNode, YNode;
 	for (int i = 0; i <= N; i++) {
 		PriceTree.SetNode(N, i, Payoff(Model.S(N, i)));
+		X.SetNode(N, i, 0);
+		Y.SetNode(N, i, 0);
 	}
 	for (int n = N - 1; n >= 0; n--) {
 		for (int i = 0; i <= n; i++) {
+		
+			X.SetNode(n, i, (PriceTree.GetNode(n + 1, i + 1) - PriceTree.GetNode(n + 1, i)) / (Model.S(n + 1, i + 1) - Model.S(n + 1, i)));
+			Y.SetNode(n, i, (PriceTree.GetNode(n + 1, i) - X.GetNode(n, i) * Model.S(n + 1, i)) / pow((1 + Model.GetR()), (1 + n)));
+
 			OptionValue = (q * PriceTree.GetNode(n + 1, i + 1) + (1 - q) * PriceTree.GetNode(n + 1, i)) / (1 + Model.GetR());
 			PriceTree.SetNode(n, i, OptionValue);
-
-			XNode = (PriceTree.GetNode(n + 1, i + 1) - PriceTree.GetNode(n + 1, i)) / (Model.S(n + 1, i + 1) - Model.S(n + 1, i));
-			X.SetNode(n, i, XNode);
-
-			YNode = (PriceTree.GetNode(n + 1, i) - X.GetNode(n,i) * Model.S(n + 1, i)) / (1 + Model.GetR());
-			Y.SetNode(n, i, YNode);
 
 			
 		}

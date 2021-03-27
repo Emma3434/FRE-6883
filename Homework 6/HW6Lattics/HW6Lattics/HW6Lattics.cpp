@@ -50,6 +50,8 @@ int main()
 	fout << "Money market account positions in replicating strategy:" << endl << endl;
 	Y2.Display(fout);
 
+	fout.close();
+
 	return 0;
 }
 

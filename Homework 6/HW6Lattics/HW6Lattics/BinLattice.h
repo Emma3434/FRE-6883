@@ -19,12 +19,12 @@ public:
 	Type GetNode(int n, int i) { return Lattice[n][i]; }
 	void Display(ostream& stream) {
 		stream << setiosflags(ios::fixed) << setprecision(3);
-		for (int n = 0; n <= N; n++)
+		for (int n = 0; n <= N; ++n)
 		{
 			for (int i = 0; i <= n; i++)
 			{
 				stream << setw(15) << GetNode(n, i);
-				// cout << endl;
+				stream << endl;
 			}
 			stream << endl;
 		}
