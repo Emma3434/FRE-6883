@@ -11,6 +11,6 @@ Content:
     1. Realization of Bisection method and Newton-Ralphson method to solve non-linear equations
     2. Computation of the yield of a coupon bond by solving non-linear function
 9. Monte Carlo method
-    1. Pricing path-dependent options with Monte Carlo method
+    1. Pricing path-dependent options with Monte-Carlo method
     2. Computation of pricing error, delta, and gamma of Asican options
-    3. Computation of pricing error and delta value for arithmetic Asian call and geometiric Asian call options
+    3. Computation of pricing error and delta value for arithmetic Asian call and geometric Asian call options
